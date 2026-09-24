@@ -1,0 +1,247 @@
+:root {
+    --navy: #1e3a5f;
+    --teal: #2a9d8f;
+    --text: #333;
+    --bg: #fdfdfb;
+    --bg-light: #f2f7f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    background: var(--bg);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--navy);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--teal);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.section {
+    padding: 5rem 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--navy);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--bg-light);
+    padding: 0 5%;
+    margin-top: 60px;
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--teal);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #21867a;
+}
+
+.timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    border-left: 3px solid var(--teal);
+    padding-left: 24px;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--teal);
+}
+
+.timeline-item h3 {
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+}
+
+.timeline-item p {
+    color: #666;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 10px;
+    border-top: 4px solid var(--teal);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.55;
+}
+
+footer {
+    background-color: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--navy);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
